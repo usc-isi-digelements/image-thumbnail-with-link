@@ -1,0 +1,132 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <link rel="import" href="../image-thumbnail-with-link.html">
+</head>
+
+<body>
+  <test-fixture id="image-thumbnail-with-link-fixture">
+    <template>
+      <image-thumbnail-with-link></image-thumbnail-with-link>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('image-thumbnail-with-link tests without properties', function() {
+      var component;
+
+      setup(function() {
+        component = fixture('image-thumbnail-with-link-fixture');
+      });
+
+      test('properties set to default values', function() {
+        expect(component.link).to.equal('');
+        expect(component.target).to.equal('_self');
+        expect(component.text).to.equal('');
+        expect(component.source).to.equal('');
+        expect(component.styleClass).to.equal('');
+        expect(component.clickProperty).to.equal('onClick');
+        expect(component.clickListener).to.exist;
+        expect(component.clickListener).to.be.an('Object');
+        expect(component.clickListener.onClick).to.exist;
+        expect(component.clickListener.onClick).to.be.a('Function');
+        expect(component.clickValue).to.equal(0);
+        expect(component.hovering).to.be.false;
+      });
+
+      test('does show image-thumbnail', function() {
+        var imageThumbnail = component.$$('image-thumbnail');
+        expect(imageThumbnail).to.exist;
+        expect(imageThumbnail.source).to.equal('');
+        expect(imageThumbnail.styleClass).to.equal('');
+        expect(imageThumbnail.clickProperty).to.equal('onClick');
+        expect(imageThumbnail.clickListener).to.be.an('Object');
+        expect(imageThumbnail.clickListener.onClick).to.be.a('Function');
+        expect(imageThumbnail.clickValue).to.equal(0);
+      });
+
+      test('does show button-link', function() {
+        var buttonLink = component.$$('button-link');
+        expect(buttonLink).to.exist;
+        expect(buttonLink.link).to.equal('');
+        expect(buttonLink.target).to.equal('_self');
+        expect(buttonLink.text).to.equal('');
+        expect(buttonLink.show).to.be.false;
+      });
+
+      test('startHover sets hovering to true', function() {
+        component.startHover();
+        expect(component.hovering).to.be.true;
+        expect(component.$$('button-link').show).to.be.true;
+      });
+
+      test('endHover sets hovering to false', function() {
+        component.hovering = true;
+        expect(component.$$('button-link').show).to.be.true;
+
+        component.endHover();
+        expect(component.hovering).to.be.false;
+        expect(component.$$('button-link').show).to.be.false;
+      });
+    });
+
+    suite('image-thumbnail-with-link tests with properties', function() {
+      var component;
+
+      setup(function(done) {
+        component = fixture('image-thumbnail-with-link-fixture');
+        component.link = 'myLink';
+        component.target = 'myTarget';
+        component.text = 'myText';
+        component.source = 'mySource';
+        component.styleClass = 'myStyleClass';
+        component.clickProperty = 'myProperty';
+        component.clickListener = {
+          myProperty: function() {}
+        };
+        component.clickValue = 5;
+        flush(function() {
+          done();
+        });
+      });
+
+      test('properties set to correct values', function() {
+        expect(component.link).to.equal('myLink');
+        expect(component.target).to.equal('myTarget');
+        expect(component.text).to.equal('myText');
+        expect(component.source).to.equal('mySource');
+        expect(component.styleClass).to.equal('myStyleClass');
+        expect(component.clickProperty).to.equal('myProperty');
+        expect(component.clickListener).to.exist;
+        expect(component.clickListener).to.be.an('Object');
+        expect(component.clickListener.myProperty).to.exist;
+        expect(component.clickListener.myProperty).to.be.a('Function');
+        expect(component.clickValue).to.equal(5);
+        expect(component.hovering).to.be.false;
+      });
+
+      test('does show image-thumbnail', function() {
+        var imageThumbnail = component.$$('image-thumbnail');
+        expect(imageThumbnail).to.exist;
+        expect(imageThumbnail.source).to.equal('mySource');
+        expect(imageThumbnail.styleClass).to.equal('myStyleClass');
+        expect(imageThumbnail.clickProperty).to.equal('myProperty');
+        expect(imageThumbnail.clickListener).to.be.an('Object');
+        expect(imageThumbnail.clickListener.myProperty).to.be.a('Function');
+        expect(imageThumbnail.clickValue).to.equal(5);
+      });
+
+      test('does show button-link', function() {
+        var buttonLink = component.$$('button-link');
+        expect(buttonLink).to.exist;
+        expect(buttonLink.link).to.equal('myLink');
+        expect(buttonLink.target).to.equal('myTarget');
+        expect(buttonLink.text).to.equal('myText');
+      });
+    });
+  </script>
+</body>
+</html>
