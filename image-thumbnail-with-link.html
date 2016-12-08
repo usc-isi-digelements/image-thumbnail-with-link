@@ -4,18 +4,18 @@
 <link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
 
 <!--
-A polymer web component that shows an image-thumnail component with a button-link component.
+A Polymer Element showing an image-thumnail component and a button-link component.
 
-Example:
+### Example
 
-        <image-thumbnail-with-link
-          link="http://link"
-          source="http://source"
-          style-class="style-class"
-          target="_blank"
-          text="Click Me"
-          click-listener="[[listener]]">
-        </image-thumbnail-with-link>
+    <image-thumbnail-with-link
+        link="http://link"
+        source="http://source"
+        style-class="style-class"
+        target="_blank"
+        text="Click Me"
+        click-listener="[[listener]]">
+    </image-thumbnail-with-link>
 
 @demo demo/index.html
 -->
@@ -44,7 +44,7 @@ Example:
 
     </style>
 
-    <div class="layout vertical center" on-mouseover="startHover" on-mouseout="endHover">
+    <div class="layout vertical center" on-mouseover="_startHover" on-mouseout="_endHover">
       <image-thumbnail
         source="[[source]]"
         style-class="[[styleClass]]"
@@ -72,6 +72,9 @@ Example:
       properties: {
         /**
          * The link URL to open information within the application.
+         *
+         * @type {String}
+         * @default ''
          */
         link: {
           type: String,
@@ -80,6 +83,9 @@ Example:
 
         /**
          * The source URL of the image.
+         *
+         * @type {String}
+         * @default ''
          */
         source: {
           type: String,
@@ -88,6 +94,9 @@ Example:
 
         /**
          * The style class of the image.
+         *
+         * @type {String}
+         * @default ''
          */
         styleClass: {
           type: String,
@@ -96,6 +105,9 @@ Example:
 
         /**
          * The link target.
+         *
+         * @type {String}
+         * @default '_self'
          */
         target: {
           type: String,
@@ -104,6 +116,9 @@ Example:
 
         /**
          * The link text.
+         *
+         * @type {String}
+         * @default ''
          */
         text: {
           type: String,
@@ -113,6 +128,9 @@ Example:
         /**
          * An object with a function property called if the image is clicked or tapped.
          * The name of the property in the object is defined in clickProperty.
+         *
+         * @type {Object}
+         * @default {onClick: function() {}}
          */
         clickListener: {
           type: Object,
@@ -125,6 +143,9 @@ Example:
 
         /**
          * The name of the function property in clickListener.
+         *
+         * @type {String}
+         * @default 'onClick'
          */
         clickProperty: {
           type: String,
@@ -133,6 +154,9 @@ Example:
 
         /**
          * The value to be given to the clickListener.
+         *
+         * @type {Number}
+         * @default 0
          */
         clickValue: {
           type: Number,
@@ -141,6 +165,9 @@ Example:
 
         /**
          * Whether the user is hovering over the image container.
+         *
+         * @type {Boolean}
+         * @default false
          */
         hovering: {
           type: Boolean,
@@ -151,15 +178,21 @@ Example:
 
       /**
        * Sets the hovering property when the user mouses over the element.
+       *
+       * @event mouseover
+       * @private
        */
-      startHover: function() {
+      _startHover: function() {
         this.set('hovering', true);
       },
 
       /**
        * Unsets the hovering property when the user mouses over the element.
+       *
+       * @event mouseout
+       * @private
        */
-      endHover: function() {
+      _endHover: function() {
         this.set('hovering', false);
       }
     });
