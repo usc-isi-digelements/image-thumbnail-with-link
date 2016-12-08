@@ -37,6 +37,13 @@
         expect(component.hovering).to.be.false;
       });
 
+      test('top level div has correct functions specified for mouse events', function() {
+        var parentDiv = component.$$('div');
+        expect(parentDiv).to.exist;
+        expect(parentDiv.onMouseover).to.equal(component.startHover());
+        expect(parentDiv.onMouseout).to.equal(component.endHover());
+      });
+
       test('does show image-thumbnail', function() {
         var imageThumbnail = component.$$('image-thumbnail');
         expect(imageThumbnail).to.exist;
