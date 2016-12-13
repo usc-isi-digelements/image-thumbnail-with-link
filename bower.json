@@ -4,7 +4,7 @@
   "authors": [
     "Next Century Corporation"
   ],
-  "description": "A Polymer Element showing an image-thumnail component and a button-link component.",
+  "description": "A Polymer Element showing an image-thumnail component and a button-link element.",
   "keywords": [
     "web-component",
     "polymer"
