@@ -1,6 +1,6 @@
 # image-thumbnail
 
-A Polymer Element showing an image-thumnail component and a button-link element.
+A Polymer Element showing an image-thumnail element and a button-link element.
 
 ### Example
 ```html
