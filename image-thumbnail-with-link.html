@@ -4,18 +4,19 @@
 <link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
 
 <!--
-A Polymer Element showing an image-thumnail component and a button-link component.
+A Polymer Element showing an image-thumnail component and a button-link element.
 
 ### Example
-
-    <image-thumbnail-with-link
-        link="http://link"
-        source="http://source"
-        style-class="style-class"
-        target="_blank"
-        text="Click Me"
-        click-listener="[[listener]]">
-    </image-thumbnail-with-link>
+```html
+<image-thumbnail-with-link
+  link="http://link"
+  source="http://source"
+  style-class="style-class"
+  target="_blank"
+  text="Click Me"
+  click-listener="[[listener]]">
+</image-thumbnail-with-link>
+```
 
 @demo demo/index.html
 -->
@@ -71,6 +72,8 @@ A Polymer Element showing an image-thumnail component and a button-link componen
 
       properties: {
         /**
+         * (Required)
+         *
          * The link URL to open information within the application.
          *
          * @type {String}
@@ -82,6 +85,8 @@ A Polymer Element showing an image-thumnail component and a button-link componen
         },
 
         /**
+         * (Required)
+         *
          * The source URL of the image.
          *
          * @type {String}
@@ -93,6 +98,8 @@ A Polymer Element showing an image-thumnail component and a button-link componen
         },
 
         /**
+         * (Optional)
+         *
          * The style class of the image.
          *
          * @type {String}
@@ -104,6 +111,8 @@ A Polymer Element showing an image-thumnail component and a button-link componen
         },
 
         /**
+         * (Optional)
+         *
          * The link target.
          *
          * @type {String}
@@ -115,6 +124,8 @@ A Polymer Element showing an image-thumnail component and a button-link componen
         },
 
         /**
+         * (Required)
+         *
          * The link text.
          *
          * @type {String}
@@ -126,6 +137,8 @@ A Polymer Element showing an image-thumnail component and a button-link componen
         },
 
         /**
+         * (Required)
+         *
          * An object with a function property called if the image is clicked or tapped.
          * The name of the property in the object is defined in clickProperty.
          *
@@ -142,6 +155,8 @@ A Polymer Element showing an image-thumnail component and a button-link componen
         },
 
         /**
+         * (Optional)
+         *
          * The name of the function property in clickListener.
          *
          * @type {String}
@@ -153,6 +168,8 @@ A Polymer Element showing an image-thumnail component and a button-link componen
         },
 
         /**
+         * (Optional)
+         *
          * The value to be given to the clickListener.
          *
          * @type {Number}
@@ -164,6 +181,8 @@ A Polymer Element showing an image-thumnail component and a button-link componen
         },
 
         /**
+         * (Optional)
+         *
          * Whether the user is hovering over the image container.
          *
          * @type {Boolean}
