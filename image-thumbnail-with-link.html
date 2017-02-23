@@ -74,7 +74,7 @@ A Polymer Element showing an image-thumnail element and a button-link element.
         link="[[link]]"
         target="[[target]]"
         text="[[text]]"
-        show="[[hovering]]">
+        show="[[_hovering]]">
       </button-link>
     </div>
   </template>
@@ -203,8 +203,9 @@ A Polymer Element showing an image-thumnail element and a button-link element.
          *
          * @type {Boolean}
          * @default false
+         * @private
          */
-        hovering: {
+        _hovering: {
           type: Boolean,
           value: false,
           notify: true
@@ -212,23 +213,23 @@ A Polymer Element showing an image-thumnail element and a button-link element.
       },
 
       /**
-       * Sets the hovering property when the user mouses over the element.
+       * Sets the _hovering property when the user mouses over the element.
        *
        * @event mouseover
        * @private
        */
       _startHover: function() {
-        this.set('hovering', true);
+        this.set('_hovering', true);
       },
 
       /**
-       * Unsets the hovering property when the user mouses over the element.
+       * Unsets the _hovering property when the user mouses over the element.
        *
        * @event mouseout
        * @private
        */
       _endHover: function() {
-        this.set('hovering', false);
+        this.set('_hovering', false);
       }
     });
   })();

@@ -50,7 +50,7 @@ limitations under the License.
         expect(element.clickListener.onClick).to.exist;
         expect(element.clickListener.onClick).to.be.a('Function');
         expect(element.clickValue).to.equal(0);
-        expect(element.hovering).to.be.false;
+        expect(element._hovering).to.be.false;
       });
 
       test('top level div has correct functions specified for mouse events', function() {
@@ -80,18 +80,18 @@ limitations under the License.
         expect(buttonLink.show).to.be.false;
       });
 
-      test('_startHover sets hovering to true', function() {
+      test('_startHover sets _hovering to true', function() {
         element._startHover();
-        expect(element.hovering).to.be.true;
+        expect(element._hovering).to.be.true;
         expect(element.$$('button-link').show).to.be.true;
       });
 
-      test('_endHover sets hovering to false', function() {
-        element.hovering = true;
+      test('_endHover sets _hovering to false', function() {
+        element._hovering = true;
         expect(element.$$('button-link').show).to.be.true;
 
         element._endHover();
-        expect(element.hovering).to.be.false;
+        expect(element._hovering).to.be.false;
         expect(element.$$('button-link').show).to.be.false;
       });
     });
@@ -128,7 +128,7 @@ limitations under the License.
         expect(element.clickListener.myProperty).to.exist;
         expect(element.clickListener.myProperty).to.be.a('Function');
         expect(element.clickValue).to.equal(5);
-        expect(element.hovering).to.be.false;
+        expect(element._hovering).to.be.false;
       });
 
       test('does show image-thumbnail', function() {

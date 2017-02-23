@@ -1,7 +1,7 @@
 {
   "name": "image-thumbnail-with-link",
   "description": "A Polymer Element showing an image-thumnail element and a button-link element.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": ["Next Century Corporation"],
   "license": "Apache-2.0",
   "keywords": [
