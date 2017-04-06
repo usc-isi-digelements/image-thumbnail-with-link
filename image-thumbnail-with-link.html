@@ -67,6 +67,7 @@ A Polymer Element showing an image-thumbnail element and a button-link element.
         style-class="[[styleClass]]"
         click-property="[[clickProperty]]"
         click-listener="[[clickListener]]"
+        click-title="[[clickTitle]]"
         click-value="[[clickValue]]">
       </image-thumbnail>
 
@@ -181,6 +182,19 @@ A Polymer Element showing an image-thumbnail element and a button-link element.
         clickProperty: {
           type: String,
           value: 'onClick'
+        },
+
+        /**
+         * (Optional)
+         *
+         * The title to be given to the clickable element.
+         *
+         * @type {String}
+         * @default ''
+         */
+        clickTitle: {
+          type: String,
+          value: ''
         },
 
         /**
