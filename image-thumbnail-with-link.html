@@ -59,10 +59,9 @@ A Polymer Element showing an image-thumbnail element and a button-link element.
       }
     </style>
 
-    </style>
-
     <div class="layout vertical center" on-mouseover="_startHover" on-mouseout="_endHover">
       <image-thumbnail
+        highlight="[[highlight]]"
         source="[[source]]"
         style-class="[[styleClass]]"
         click-property="[[clickProperty]]"
@@ -88,6 +87,19 @@ A Polymer Element showing an image-thumbnail element and a button-link element.
       is: 'image-thumbnail-with-link',
 
       properties: {
+        /**
+         * (Optional)
+         *
+         * Whether to highlight the image.
+         *
+         * @type {Boolean}
+         * @default false
+         */
+        highlight: {
+          type: Boolean,
+          value: false
+        },
+
         /**
          * (Required)
          *

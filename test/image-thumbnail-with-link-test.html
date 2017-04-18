@@ -39,11 +39,12 @@ limitations under the License.
       });
 
       test('properties set to default values', function() {
+        expect(element.highlight).to.be.false;
         expect(element.link).to.equal('');
-        expect(element.target).to.equal('_self');
-        expect(element.text).to.equal('');
         expect(element.source).to.equal('');
         expect(element.styleClass).to.equal('');
+        expect(element.target).to.equal('_self');
+        expect(element.text).to.equal('');
         expect(element.clickProperty).to.equal('onClick');
         expect(element.clickListener).to.exist;
         expect(element.clickListener).to.be.an('Object');
@@ -63,6 +64,7 @@ limitations under the License.
       test('does show image-thumbnail', function() {
         var imageThumbnail = element.$$('image-thumbnail');
         expect(imageThumbnail).to.exist;
+        expect(imageThumbnail.highlight).to.be.false;
         expect(imageThumbnail.source).to.equal('');
         expect(imageThumbnail.styleClass).to.equal('');
         expect(imageThumbnail.clickProperty).to.equal('onClick');
@@ -101,6 +103,7 @@ limitations under the License.
 
       setup(function(done) {
         element = fixture('image-thumbnail-with-link-fixture');
+        element.highlight = true;
         element.link = 'myLink';
         element.target = 'myTarget';
         element.text = 'myText';
@@ -117,11 +120,12 @@ limitations under the License.
       });
 
       test('properties set to correct values', function() {
+        expect(element.highlight).to.be.true;
         expect(element.link).to.equal('myLink');
-        expect(element.target).to.equal('myTarget');
-        expect(element.text).to.equal('myText');
         expect(element.source).to.equal('mySource');
         expect(element.styleClass).to.equal('myStyleClass');
+        expect(element.target).to.equal('myTarget');
+        expect(element.text).to.equal('myText');
         expect(element.clickProperty).to.equal('myProperty');
         expect(element.clickListener).to.exist;
         expect(element.clickListener).to.be.an('Object');
@@ -134,6 +138,7 @@ limitations under the License.
       test('does show image-thumbnail', function() {
         var imageThumbnail = element.$$('image-thumbnail');
         expect(imageThumbnail).to.exist;
+        expect(imageThumbnail.highlight).to.be.true;
         expect(imageThumbnail.source).to.equal('mySource');
         expect(imageThumbnail.styleClass).to.equal('myStyleClass');
         expect(imageThumbnail.clickProperty).to.equal('myProperty');
