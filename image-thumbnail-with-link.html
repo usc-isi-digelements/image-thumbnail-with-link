@@ -71,6 +71,7 @@ A Polymer Element showing an image-thumbnail element and a button-link element.
       </image-thumbnail>
 
       <button-link
+        icon="[[icon]]"
         link="[[link]]"
         target="[[target]]"
         text="[[text]]"
@@ -98,6 +99,19 @@ A Polymer Element showing an image-thumbnail element and a button-link element.
         highlight: {
           type: Boolean,
           value: false
+        },
+
+        /**
+         * (Optional)
+         *
+         * The link icon.
+         *
+         * @type {String}
+         * @default ''
+         */
+        icon: {
+          type: String,
+          value: ''
         },
 
         /**

@@ -40,6 +40,7 @@ limitations under the License.
 
       test('properties set to default values', function() {
         expect(element.highlight).to.be.false;
+        expect(element.icon).to.equal('');
         expect(element.link).to.equal('');
         expect(element.source).to.equal('');
         expect(element.styleClass).to.equal('');
@@ -76,6 +77,7 @@ limitations under the License.
       test('does show button-link', function() {
         var buttonLink = element.$$('button-link');
         expect(buttonLink).to.exist;
+        expect(buttonLink.icon).to.equal('');
         expect(buttonLink.link).to.equal('');
         expect(buttonLink.target).to.equal('_self');
         expect(buttonLink.text).to.equal('');
@@ -104,6 +106,7 @@ limitations under the License.
       setup(function(done) {
         element = fixture('image-thumbnail-with-link-fixture');
         element.highlight = true;
+        element.icon = 'myIcon';
         element.link = 'myLink';
         element.target = 'myTarget';
         element.text = 'myText';
@@ -114,13 +117,12 @@ limitations under the License.
           myProperty: function() {}
         };
         element.clickValue = 5;
-        flush(function() {
-          done();
-        });
+        flush(done);
       });
 
       test('properties set to correct values', function() {
         expect(element.highlight).to.be.true;
+        expect(element.icon).to.equal('myIcon');
         expect(element.link).to.equal('myLink');
         expect(element.source).to.equal('mySource');
         expect(element.styleClass).to.equal('myStyleClass');
@@ -150,6 +152,7 @@ limitations under the License.
       test('does show button-link', function() {
         var buttonLink = element.$$('button-link');
         expect(buttonLink).to.exist;
+        expect(buttonLink.icon).to.equal('myIcon');
         expect(buttonLink.link).to.equal('myLink');
         expect(buttonLink.target).to.equal('myTarget');
         expect(buttonLink.text).to.equal('myText');
