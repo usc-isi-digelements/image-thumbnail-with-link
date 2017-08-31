@@ -18,34 +18,39 @@ limitations under the License.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
   <link rel="import" href="../image-thumbnail-with-link.html">
 </head>
 
 <body unresolved>
-  <template is="dom-bind" id="demo">
-    <p>Icon: star</p>
-    <p>Link: http://nextcentury.com</p>
-    <p>Target: _blank</p>
-    <p>Text: Click Me</p>
-    <p>Source: NextCentury.png</p>
-    <p>Style Class: custom</p>
-    <p>Click Property: click</p>
-    <p>Click Listener: { click: function(value) { console.log('Clicked ' + value); } }</p>
-    <p>Click Value: 123</p>
+  <dom-bind id="demo">
+    <template is="dom-bind" id="demo">
+      <p>Icon: open-in-new</p>
+      <p>Link: http://nextcentury.com</p>
+      <p>Target: _blank</p>
+      <p>Text: Click Me</p>
+      <p>Source: NextCentury.png</p>
+      <p>Style Class: custom</p>
+      <p>Click Property: click</p>
+      <p>Click Listener: { click: function(value) { console.log('Clicked ' + value); } }</p>
+      <p>Click Title: Next Century</p>
+      <p>Click Value: 123</p>
 
-    <image-thumbnail-with-link
-      icon="star"
-      link="http://nextcentury.com"
-      target="_blank"
-      text="Click Me"
-      source="NextCentury.png"
-      style-class="custom"
-      click-property="click"
-      click-listener="[[clickListener]]"
-      click-value="123">
-    </image-thumbnail-with-link>
-  </template>
+      <image-thumbnail-with-link
+        icon="open-in-new"
+        link="http://nextcentury.com"
+        target="_blank"
+        text="Click Me"
+        source="NextCentury.png"
+        style-class="custom"
+        click-property="click"
+        click-listener="[[clickListener]]"
+        click-title="Next Century"
+        click-value="123">
+      </image-thumbnail-with-link>
+    </template>
+  </dom-bind>
+
   <script>
     (function(document) {
       var demo = document.querySelector('#demo');

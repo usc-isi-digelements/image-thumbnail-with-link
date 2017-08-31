@@ -1,7 +1,7 @@
 {
   "name": "image-thumbnail-with-link",
   "description": "A Polymer Element showing an image-thumnail element and a button-link element.",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "authors": ["Next Century Corporation"],
   "license": "Apache-2.0",
   "keywords": [
@@ -9,20 +9,19 @@
     "polymer"
   ],
   "main": "image-thumbnail-with-link.html",
-  "license": "http://polymer.github.io/LICENSE.txt",
   "homepage": "https://github.com/DigElements/image-thumbnail-with-link/",
   "ignore": [
     "/.*",
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.7.0",
-    "button-link": "DigElements/button-link#^1.0.2",
-    "image-thumbnail": "DigElements/image-thumbnail#^1.0.4",
-    "iron-flex-layout": "PolymerElements/iron-flex-layout#1.3.1"
+    "polymer": "Polymer/polymer#^2.0.2",
+    "button-link": "DigElements/button-link#^2.0.0",
+    "image-thumbnail": "DigElements/image-thumbnail#^2.0.0",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
-    "web-component-tester": "^5.0.0"
+    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
+    "web-component-tester": "^6.0.0"
   }
 }

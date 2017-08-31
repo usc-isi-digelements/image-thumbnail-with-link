@@ -55,10 +55,15 @@ limitations under the License.
         expect(element._hovering).to.be.false;
       });
 
-      test('top level div has correct functions specified for mouse events', function() {
+      test('top level div does have mouseover function', function() {
         var parentDiv = element.$$('div');
         expect(parentDiv).to.exist;
         expect(parentDiv.onMouseover).to.equal(element._startHover());
+      });
+
+      test('top level div does have mouseout function', function() {
+        var parentDiv = element.$$('div');
+        expect(parentDiv).to.exist;
         expect(parentDiv.onMouseout).to.equal(element._endHover());
       });
 
