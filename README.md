@@ -14,6 +14,17 @@ A Polymer Element showing an image-thumbnail element and a button-link element.
 </image-thumbnail-with-link>
 ```
 
+### Styling
+
+`<image-thumbnail-with-link>` provides the following custom properties and mixins for styling:
+
+Custom property                               | Description                                                    | Default
+----------------------------------------------|----------------------------------------------------------------|--------
+`--image-thumbnail-with-link-highlight-color` | The background color of the highlighted image.                 | none
+`--image-thumbnail-with-link-highlight-style` | The style of the highlighted image.                            | none
+`--image-thumbnail-with-link-image-style`     | The style of the element containing the image.                 | none
+`--image-thumbnail-with-link-style`           | The style of the element containing the image and button link. | none
+
 ### Dependencies
 
 Dependencies are installed using [Bower](http://bower.io/):

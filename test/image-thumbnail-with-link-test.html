@@ -58,13 +58,13 @@ limitations under the License.
       test('top level div does have mouseover function', function() {
         var parentDiv = element.$$('div');
         expect(parentDiv).to.exist;
-        expect(parentDiv.onMouseover).to.equal(element._startHover());
+        expect(parentDiv.onMouseover).to.equal(element._hoverBegin());
       });
 
       test('top level div does have mouseout function', function() {
         var parentDiv = element.$$('div');
         expect(parentDiv).to.exist;
-        expect(parentDiv.onMouseout).to.equal(element._endHover());
+        expect(parentDiv.onMouseout).to.equal(element._hoverEnd());
       });
 
       test('does show image-thumbnail', function() {
@@ -89,19 +89,32 @@ limitations under the License.
         expect(buttonLink.show).to.be.false;
       });
 
-      test('_startHover sets _hovering to true', function() {
-        element._startHover();
+      test('_hoverBegin sets _hovering to true', function() {
+        element._hoverBegin();
         expect(element._hovering).to.be.true;
         expect(element.$$('button-link').show).to.be.true;
       });
 
-      test('_endHover sets _hovering to false', function() {
+      test('_hoverEnd sets _hovering to false', function() {
         element._hovering = true;
         expect(element.$$('button-link').show).to.be.true;
 
-        element._endHover();
+        element._hoverEnd();
         expect(element._hovering).to.be.false;
         expect(element.$$('button-link').show).to.be.false;
+      });
+
+      test('_getHighlightStyleClass does work as expected', function() {
+        expect(element._getHighlightStyleClass(true)).to.equal('highlight');
+        expect(element._getHighlightStyleClass(false)).to.equal('');
+      });
+
+      test('setting highlight to true does add the highlight class to div', function(done) {
+        element.highlight = true;
+        flush(function() {
+          expect(element.$$('div').classList.contains('highlight')).to.be.true;
+          done();
+        });
       });
     });
 
