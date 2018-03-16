@@ -1,7 +1,7 @@
 {
   "name": "image-thumbnail-with-link",
   "description": "A Polymer Element showing an image-thumnail element and a button-link element.",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "authors": ["Next Century Corporation"],
   "license": "Apache-2.0",
   "keywords": [
@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
-    "button-link": "DigElements/button-link#2.0.1",
+    "button-link": "DigElements/button-link#2.0.2",
     "image-thumbnail": "DigElements/image-thumbnail#2.0.3",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.0"
   },
