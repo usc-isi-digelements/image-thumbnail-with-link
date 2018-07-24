@@ -16,8 +16,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
-    "button-link": "usc-isi-digelements/button-link#2.0.2",
-    "image-thumbnail": "usc-isi-digelements/image-thumbnail#2.0.3",
+    "button-link": "usc-isi-digelements/button-link#^2.0.2",
+    "image-thumbnail": "usc-isi-digelements/image-thumbnail#^2.0.3",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.0"
   },
   "devDependencies": {
